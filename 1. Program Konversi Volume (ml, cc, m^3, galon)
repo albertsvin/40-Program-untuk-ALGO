@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    float liter, hasil;
+    int pilihan;
+    printf("PROGRAM KONVERSI VOLUME\n");
+    printf("Masukkan volume dalam liter: ");
+    scanf("%f", &liter);
+    
+    printf("\nPilih satuan tujuan:\n");
+    printf("1. Mililiter (ml)\n");
+    printf("2. Cubic Centimeter (cc)\n");
+    printf("3. Meter Kubik (m3)\n");
+    printf("4. Galon (US)\n");
+    printf("Pilihan Anda (1-4): ");
+    scanf("%d", &pilihan);
+    
+    switch(pilihan) {
+        case 1:
+            hasil = liter * 1000;
+            printf("\n%.2f liter = %.2f mililiter\n", liter, hasil);
+            break;
+        case 2:
+            hasil = liter * 1000;
+            printf("\n%.2f liter = %.2f cc\n", liter, hasil);
+            break;
+        case 3:
+            hasil = liter / 1000;
+            printf("\n%.2f liter = %.4f meter kubik\n", liter, hasil);
+            break;
+        case 4:
+            hasil = liter * 0.264172;
+            printf("\n%.2f liter = %.2f galon (US)\n", liter, hasil);
+            break;
+        default:
+            printf("\nPilihan tidak valid!\n");
+    }
+    return 0;
+}
