@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <windows.h> 
+
+int main() {
+    int menit = 5;
+    int detik = menit * 60;
+    int i;
+    printf("TIMER TELUR REBUS\n");
+    printf("Waktu: %d menit\n\n", menit);
+    
+    for(i = detik; i > 0; i--) {
+        printf("\rWaktu tersisa: %02d:%02d", i/60, i%60);
+        fflush(stdout);
+        sleep(1000);
+    }
+    printf("\n\nBEEEP! BEEEP! BEEEP!\n");
+    printf("Telur rebus sudah matang selama %d menit!\n", menit);
+    return 0;
+}
