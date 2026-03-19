@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int daya, jam;
+    float tarif, total;
+    
+    printf("=== KALKULATOR TAGIHAN LISTRIK ===\n");
+    printf("Masukkan daya alat (Watt): ");
+    scanf("%d", &daya);
+    printf("Lama pemakaian per hari (jam): ");
+    scanf("%d", &jam);
+    printf("Tarif per kWh (Rp): ");
+    scanf("%f", &tarif);
+    float kwhPerHari = (daya * jam) / 1000.0;
+    float kwhPerBulan = kwhPerHari * 30;
+    total = kwhPerBulan * tarif;
+    
+    printf("\n=== HASIL PERHITUNGAN ===\n");
+    printf("Pemakaian per hari: %.2f kWh\n", kwhPerHari);
+    printf("Pemakaian per bulan: %.2f kWh\n", kwhPerBulan);
+    printf("Biaya per bulan: Rp %.2f\n", total);
+    printf("Biaya per tahun: Rp %.2f\n", total * 12);
+    
+    return 0;
+}
