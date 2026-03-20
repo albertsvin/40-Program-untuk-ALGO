@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char nama_mahasiswa[100];
+    int pilihan_kelas;
+    char nama_mata_kuliah[50];
+    char jadwal_kuliah[50];
+  printf("==================================================\n");
+    printf("   SISTEM PEMILIHAN KELAS TAMBAHAN\n");
+    printf("==================================================\n");
+    printf("Masukkan Nama Lengkap Anda : ");
+    scanf(" %[^\n]", nama_mahasiswa); 
+    printf("\nDaftar Kelas yang Tersedia (Pilih salah satu):\n");
+    printf("1. Algoritma dan Pemrograman Dasar  (Senin, 08:00 - 10:30)\n");
+    printf("2. Perancangan Basis Data           (Selasa, 10:00 - 12:30)\n");
+    printf("3. Desain Antarmuka (UI/UX)         (Rabu, 13:00 - 15:30)\n");
+    printf("4. Pemrograman Web Frontend         (Kamis, 08:00 - 10:30)\n");
+    printf("5. Pengantar Sistem Informasi       (Jumat, 13:00 - 15:30)\n");
+
+    printf("\nMasukkan nomor kelas yang ingin diambil (1-5): ");
+    scanf("%d", &pilihan_kelas);
+
+    switch(pilihan_kelas) {
+        case 1:
+            strcpy(nama_mata_kuliah, "Algoritma dan Pemrograman Dasar");
+            strcpy(jadwal_kuliah, "Senin, 08:00 - 10:30");
+            break;
+        case 2:
+            strcpy(nama_mata_kuliah, "Perancangan Basis Data");
+            strcpy(jadwal_kuliah, "Selasa, 10:00 - 12:30");
+            break;
+        case 3:
+            strcpy(nama_mata_kuliah, "Desain Antarmuka (UI/UX)");
+            strcpy(jadwal_kuliah, "Rabu, 13:00 - 15:30");
+            break;
+        case 4:
+            strcpy(nama_mata_kuliah, "Pemrograman Web Frontend");
+            strcpy(jadwal_kuliah, "Kamis, 08:00 - 10:30");
+            break;
+        case 5:
+            strcpy(nama_mata_kuliah, "Pengantar Sistem Informasi");
+            strcpy(jadwal_kuliah, "Jumat, 13:00 - 15:30");
+            break;
+        default:
+            strcpy(nama_mata_kuliah, "TIDAK VALID");
+            strcpy(jadwal_kuliah, "TIDAK ADA JADWAL");
+            break;
+    }
+    printf("\n\n");
+    printf("==================================================\n");
+    printf("           FORMULIR PENDAFTARAN KELAS             \n");
+    printf("==================================================\n");
+    printf("Nama Mahasiswa : %s\n", nama_mahasiswa);
+    printf("Kelas Diambil  : %s\n", nama_mata_kuliah);
+    printf("Jadwal Kuliah  : %s\n", jadwal_kuliah);
+    printf("==================================================\n");
+    printf("Data telah berhasil disimpan ke dalam sistem.\n");
+    return 0;
+}
