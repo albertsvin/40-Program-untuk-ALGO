@@ -1,0 +1,79 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char namarak[5][50];
+    int stok[5];
+    int pilihan, rak, jumlah;
+    int i, j;
+    printf("=== PROGRAM GUDANG TOSERBA ===\n");
+    for(i = 0; i < 5; i++) {
+        printf("\nMasukkan nama barang untuk rak ke-%d: ", i + 1);
+        scanf(" %[^\n]", namarak[i]);
+        printf("Masukkan jumlah stok awal: ");
+        scanf("%d", &stok[i]);
+    } do {
+        printf("\n=== MENU GUDANG ===\n");
+        printf("1. Tampilkan semua rak\n");
+        printf("2. Tambah stok barang\n");
+        printf("3. Kurangi stok barang\n");
+        printf("4. Tampilkan histogram stok\n");
+        printf("5. Keluar\n");
+        printf("Pilih menu (1-5): ");
+        scanf("%d", &pilihan);
+
+        switch(pilihan) {
+            case 1:
+                printf("\nDaftar Rak dan Stok:\n");
+                for(i = 0; i < 5; i++) {
+                    printf("Rak %d - %s : %d\n", i + 1, namarak[i], stok[i]);
+                }
+                break;
+            case 2:
+                printf("\nPilih rak yang ingin ditambah stok (1-5): ");
+                scanf("%d", &rak);
+                if(rak < 1 || rak > 5) {
+                    printf("Rak tidak valid!\n");
+                    break;
+                }
+                printf("Masukkan jumlah stok yang ingin ditambah: ");
+                scanf("%d", &jumlah);
+                stok[rak - 1] += jumlah;
+                printf("Stok berhasil ditambahkan!\n");
+                break;
+            case 3:
+                printf("\nPilih rak yang ingin dikurangi stok (1-5): ");
+                scanf("%d", &rak);
+                if(rak < 1 || rak > 5) {
+                    printf("Rak tidak valid!\n");
+                    break;
+                }
+                printf("Masukkan jumlah stok yang ingin dikurangi: ");
+                scanf("%d", &jumlah);
+                if(jumlah > stok[rak - 1]) {
+                    printf("Error: stok tidak mencukupi!\n");
+                } else {
+                    stok[rak - 1] -= jumlah;
+                    printf("Stok berhasil dikurangi!\n");
+                }
+                break;
+            case 4:
+                printf("\n=== Histogram Kapasitas Rak ===\n");
+                for(i = 0; i < 5; i++) {
+                    printf("%s (%d): ", namarak[i], stok[i]);
+                    for(j = 0; j < stok[i]; j++) {
+                        printf("*");
+                    }
+                    printf("\n");
+                }
+                break;
+            case 5:
+                printf("\nTerima kasih telah menggunakan program!\n");
+                break;
+            default:
+                printf("Pilihan tidak valid, coba lagi.\n");
+        }
+    } while(pilihan != 5);
+
+    return 0;
+}
