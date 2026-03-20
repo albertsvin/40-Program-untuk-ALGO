@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+int main() {
+    int barisA, kolomA, barisB, kolomB;
+    int A[10][10], B[10][10], hasil[10][10];
+    int i, j, k;
+    printf("Masukkan jumlah baris Matriks A: ");
+    scanf("%d", &barisA);
+    printf("Masukkan jumlah kolom Matriks A: ");
+    scanf("%d", &kolomA);
+
+    printf("Masukkan jumlah baris Matriks B: ");
+    scanf("%d", &barisB);
+    printf("Masukkan jumlah kolom Matriks B: ");
+    scanf("%d", &kolomB);
+    if (kolomA != barisB) {
+        printf("\nPerkalian tidak bisa dilakukan! Jumlah kolom A harus sama dengan jumlah baris B.\n");
+        return 0;
+    }
+    printf("\nMasukkan elemen Matriks A:\n");
+    for (i = 0; i < barisA; i++) {
+        for (j = 0; j < kolomA; j++) {
+            printf("A[%d][%d] = ", i + 1, j + 1);
+            scanf("%d", &A[i][j]);
+        }
+    }
+    printf("\nMasukkan elemen Matriks B:\n");
+    for (i = 0; i < barisB; i++) {
+        for (j = 0; j < kolomB; j++) {
+            printf("B[%d][%d] = ", i + 1, j + 1);
+            scanf("%d", &B[i][j]);
+        }
+    }
+    for (i = 0; i < barisA; i++) {
+        for (j = 0; j < kolomB; j++) {
+            hasil[i][j] = 0;
+            for (k = 0; k < kolomA; k++) {
+                hasil[i][j] += A[i][k] * B[k][j];
+            } 
+        }
+     }
+    printf("\nHasil Perkalian Matriks (A x B):\n");
+    for (i = 0; i < barisA; i++) {
+        for (j = 0; j < kolomB; j++) {
+            printf("[ %d ] ", hasil[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
