@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    float total_tagihan, per_orang;
+    int jumlah_orang;
+
+    printf("Masukkan total tagihan: Rp ");
+    scanf("%f", &total_tagihan);
+    
+    printf("Berapa orang yang patungan? ");
+    scanf("%d", &jumlah_orang);
+    
+    per_orang = total_tagihan / jumlah_orang;
+    printf("Masing-masing harus membayar: Rp %.2f\n", per_orang);
+    
+    return 0;
+}
