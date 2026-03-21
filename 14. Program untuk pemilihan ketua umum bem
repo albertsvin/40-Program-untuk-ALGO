@@ -30,13 +30,13 @@ int main() {
     int total = suara1 + suara2 + suara3;
 
     printf("\n=== HASIL VOTING ===\n");
-    printf("Andi  : %d suara\n", suara1);
-    printf("Budi  : %d suara\n", suara2);
-    printf("Citra : %d suara\n", suara3);
+    printf("Felix  : %d suara\n", suara1);
+    printf("William : %d suara\n", suara2);
+    printf("Hillary : %d suara\n", suara3);
     printf("\n=== PERSENTASE ===\n");
-    printf("Andi  : %.2f%%\n", (suara1 * 100.0) / total);
-    printf("Budi  : %.2f%%\n", (suara2 * 100.0) / total);
-    printf("Citra : %.2f%%\n", (suara3 * 100.0) / total);
+    printf("Felix  : %.2f%%\n", (suara1 * 100.0) / total);
+    printf("William : %.2f%%\n", (suara2 * 100.0) / total);
+    printf("Hillary : %.2f%%\n", (suara3 * 100.0) / total);
 
     printf("\n=== PEMENANG ===\n");
     if (suara1 > suara2 && suara1 > suara3) {
