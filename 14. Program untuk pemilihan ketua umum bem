@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+int main() {
+    int pilihan, jumlah_pemilih;
+    int suara1 = 0, suara2 = 0, suara3 = 0;
+    printf("=== VOTING KETUA UMUM BEM ===\n");
+    printf("Calon:\n");
+    printf("1. Felix\n");
+    printf("2. William\n");
+    printf("3. Hillary\n");
+    printf("\nMasukkan jumlah pemilih: ");
+    scanf("%d", &jumlah_pemilih);
+    for (int i = 1; i <= jumlah_pemilih; i++) {
+        printf("\nPemilih ke-%d\n", i);
+        printf("Pilih calon (1/2/3): ");
+        scanf("%d", &pilihan);
+
+        if (pilihan == 1) {
+            suara1++;
+        } else if (pilihan == 2) {
+            suara2++;
+        } else if (pilihan == 3) {
+            suara3++;
+        } else {
+            printf("Pilihan tidak valid!\n");
+            i--; // ulang input
+        }
+    }
+
+    int total = suara1 + suara2 + suara3;
+
+    printf("\n=== HASIL VOTING ===\n");
+    printf("Andi  : %d suara\n", suara1);
+    printf("Budi  : %d suara\n", suara2);
+    printf("Citra : %d suara\n", suara3);
+    printf("\n=== PERSENTASE ===\n");
+    printf("Andi  : %.2f%%\n", (suara1 * 100.0) / total);
+    printf("Budi  : %.2f%%\n", (suara2 * 100.0) / total);
+    printf("Citra : %.2f%%\n", (suara3 * 100.0) / total);
+
+    printf("\n=== PEMENANG ===\n");
+    if (suara1 > suara2 && suara1 > suara3) {
+        printf("Felix sah menjadi Ketua Umum!\n");
+    } else if (suara2 > suara1 && suara2 > suara3) {
+        printf("William sah menjadi Ketua Umum!\n");
+    } else if (suara3 > suara1 && suara3 > suara2) {
+        printf("Hillary sah menjadi Ketua Umum!\n");
+    } else {
+        printf("Hasil seri!\n");
+    }
+    return 0;
+}
