@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    char kegiatan[10][50];
+    printf("=== Jadwal Harian ===\n");
+    printf("Masukkan jumlah kegiatan (maks 10): ");
+    scanf("%d", &n);
+
+    getchar();
+    for (i = 0; i < n; i++) {
+        printf("Kegiatan ke-%d: ", i + 1);
+        fgets(kegiatan[i], sizeof(kegiatan[i]), stdin);
+    }
+    printf("\n=== Daftar Kegiatan ===\n");
+    for (i = 0; i < n; i++) {
+        printf("%d. %s", i + 1, kegiatan[i]);
+    }
+    return 0;
+}
