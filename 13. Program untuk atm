@@ -1,0 +1,69 @@
+#include <stdio.h>
+#include <string.h>
+int main() {
+    int pilihan, saldo = 1000000, jumlah;
+    char no_rek[] = "1234567890";
+    char riwayat[10][100];
+    int idx = 0;
+    printf("=== SIMULASI ATM ===\n");
+    printf("No Rekening : %s\n", no_rek);
+    printf("Saldo Awal  : Rp %d\n", saldo);
+    do {
+        printf("\n=== MENU ===\n");
+        printf("1. Cek Saldo\n");
+        printf("2. Tarik Tunai\n");
+        printf("3. Setor Tunai\n");
+        printf("4. Keluar\n");
+        printf("Pilih: ");
+        scanf("%d", &pilihan);
+
+        switch (pilihan) {
+            case 1:
+                printf("Saldo: Rp %d\n", saldo);
+                sprintf(riwayat[idx++], "Cek saldo: Rp %d", saldo);
+                break;
+
+            case 2:
+                printf("Jumlah tarik: ");
+                scanf("%d", &jumlah);
+
+                if (jumlah <= saldo && jumlah > 0) {
+                    saldo -= jumlah;
+                    printf("Berhasil tarik.\n");
+                    sprintf(riwayat[idx++], "Tarik: Rp %d", jumlah);
+                } else {
+                    printf("Gagal.\n");
+                }
+                break;
+
+            case 3:
+                printf("Jumlah setor: ");
+                scanf("%d", &jumlah);
+
+                if (jumlah > 0) {
+                    saldo += jumlah;
+                    printf("Berhasil setor.\n");
+                    sprintf(riwayat[idx++], "Setor: Rp %d", jumlah);
+                } else {
+                    printf("Gagal.\n");
+                }
+                break;
+
+            case 4:
+                printf("\n=== STRUK ===\n");
+                printf("No Rekening: %s\n", no_rek);
+                printf("Saldo Akhir: Rp %d\n", saldo);
+
+                printf("\nRiwayat:\n");
+                for (int i = 0; i < idx; i++) {
+                    printf("%d. %s\n", i + 1, riwayat[i]);
+                }
+                printf("\nTerima kasih.\n");
+                break;
+            default:
+                printf("Pilihan salah!\n");
+        }
+    } while (pilihan != 4);
+
+    return 0;
+}
