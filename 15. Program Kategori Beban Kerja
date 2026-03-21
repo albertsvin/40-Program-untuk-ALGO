@@ -1,0 +1,29 @@
+#include <stdio.h>
+int main() {
+    int jumlah;
+    printf("=== KATEGORI BEBAN KERJA (CORTISOL) ===\n");
+    printf("Masukkan jumlah pekerjaan: ");
+    scanf("%d", &jumlah);
+
+    if (jumlah >= 0 && jumlah <= 3) {
+        printf("Kategori: LOW CORTISOL\n");
+        printf("Rekomendasi: Beban ringan, tetap produktif!\n");
+    } 
+    else if (jumlah >= 4 && jumlah <= 6) {
+        printf("Kategori: MEDIUM CORTISOL\n");
+        printf("Rekomendasi: Mulai atur waktu dengan baik.\n");
+    } 
+    else if (jumlah >= 7 && jumlah <= 10) {
+        printf("Kategori: HIGH CORTISOL\n");
+        printf("Rekomendasi: Hati-hati burnout, coba istirahat!\n");
+    } 
+    else if (jumlah > 10) {
+        printf("Kategori: EXTREME\n");
+        printf("Rekomendasi: Terlalu banyak pekerjaan!\n");
+    } 
+    else {
+        printf("Input tidak valid!\n");
+    }
+
+    return 0;
+}
