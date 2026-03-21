@@ -4,11 +4,9 @@ int main() {
     int jam_masuk, jam_keluar, durasi;
     int tarif_per_jam = 3000;
     int total;
-
     printf("=== Program Parkir ===\n");
     printf("Masukkan jam masuk (0-23): ");
     scanf("%d", &jam_masuk);
-
     printf("Masukkan jam keluar (0-23): ");
     scanf("%d", &jam_keluar);
 
@@ -16,9 +14,7 @@ int main() {
     if (durasi < 0) {
         durasi += 24;
     }
-
     total = durasi * tarif_per_jam;
-
     printf("Durasi parkir: %d jam\n", durasi);
     printf("Total biaya: Rp %d\n", total);
 
