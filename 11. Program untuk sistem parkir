@@ -1,11 +1,26 @@
 #include <stdio.h>
 
 int main() {
-    int jam_masuk, jam_keluar, durasi;
-    int tarif_per_jam = 3000;
+    int jenis_kendaraan, jam_masuk, jam_keluar, durasi;
+    int tarif_per_jam_motor, tarif_per_jam_mobil;
     int total;
-    printf("=== Program Parkir ===\n");
-    printf("Masukkan jam masuk (0-23): ");
+    printf("=== Program Parkir ===\n\n");
+    printf("DAFTAR HARGA PARKIR:\n");
+    printf("====================\n");
+    printf("MOTOR:\n");
+    printf("  - 1 jam pertama: Rp 2.000\n");
+    printf("  - Jam selanjutnya: Rp 1.500/jam\n\n");
+    printf("MOBIL:\n");
+    printf("  - 1 jam pertama: Rp 5.000\n");
+    printf("  - Jam selanjutnya: Rp 3.000/jam\n\n");
+
+    printf("PILIH JENIS KENDARAAN:\n");
+    printf("1. Motor\n");
+    printf("2. Mobil\n");
+    printf("Masukkan pilihan (1/2): ");
+    scanf("%d", &jenis_kendaraan);
+ 
+    printf("\nMasukkan jam masuk (0-23): ");
     scanf("%d", &jam_masuk);
     printf("Masukkan jam keluar (0-23): ");
     scanf("%d", &jam_keluar);
@@ -14,9 +29,44 @@ int main() {
     if (durasi < 0) {
         durasi += 24;
     }
-    total = durasi * tarif_per_jam;
+    if (durasi == 0) {
+        durasi = 1; 
+    }
+   
+    if (jenis_kendaraan == 1) { 
+        tarif_per_jam_motor = 2000; 
+        if (durasi == 1) {
+            total = tarif_per_jam_motor;
+        } else {
+            total = tarif_per_jam_motor + ((durasi - 1) * 1500);
+        }
+        printf("\nJenis kendaraan: MOTOR\n");
+    } else if (jenis_kendaraan == 2) { 
+        tarif_per_jam_mobil = 5000; 
+        if (durasi == 1) {
+            total = tarif_per_jam_mobil;
+        } else {
+total = tarif_per_jam_mobil + ((durasi - 1) * 3000);
+        }
+        printf("\nJenis kendaraan: MOBIL\n");
+    } else {
+        printf("\nPilihan tidak valid!\n");
+        return 1;
+    }
+   
     printf("Durasi parkir: %d jam\n", durasi);
+    if (durasi == 1) {
+        printf("Rincian biaya: Rp %d (1 jam pertama)\n", total);
+    } else {
+        if (jenis_kendaraan == 1) {
+            printf("Rincian biaya: Rp 2.000 (jam pertama) + Rp %d (", (durasi - 1) * 1500);
+            printf("%d jam berikutnya) = Rp %d\n", durasi - 1, total);
+        } else {
+            printf("Rincian biaya: Rp 5.000 (jam pertama) + Rp %d (", (durasi - 1) * 3000);
+            printf("%d jam berikutnya) = Rp %d\n", durasi - 1, total);
+        }
+    }
     printf("Total biaya: Rp %d\n", total);
-
+    
     return 0;
 }
