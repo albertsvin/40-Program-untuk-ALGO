@@ -1,0 +1,295 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char jawaban;
+    int skor = 0;
+    char pilihan;
+    int kategori;
+    int i;
+    
+    printf("========================================\n");
+    printf("   APAKAH KAMU BUTUH PACAR SEKARANG?   \n");
+    printf("========================================\n\n");  
+    printf("Halo! Program ini akan membantu kamu merefleksikan\n");
+    printf("apakah kamu benar-benar membutuhkan pacar saat ini,\n");
+    printf("atau mungkin ada hal lain yang sebenarnya kamu butuhkan.\n\n");
+    
+    printf("PILIH KATEGORI USIAMU:\n");
+    printf("1. Remaja (SMA / 15-18 tahun)\n");
+    printf("2. Mahasiswa (Kuliah / 18-24 tahun)\n");
+    printf("3. Pekerja (20-30an tahun)\n");
+    printf("Masukkan pilihan (1/2/3): ");
+    scanf("%d", &kategori);
+    printf("\nApakah kamu yakin ingin menjalani tes ini? (y/n): ");
+    scanf(" %c", &pilihan);
+    
+    if (pilihan == 'n' || pilihan == 'N') {
+        printf("\n========================================\n");
+        printf("   OKE, SEMOGA KAMU BAHAGIA APA ADANYA   \n");
+        printf("========================================\n");
+        printf("Ingat, kebahagiaan tidak selalu tentang memiliki pasangan.\n");
+        printf("Kamu sudah cukup berharga apa adanya. :)\n");
+        return 0;
+    } 
+    printf("\n========================================\n");
+    printf("   JAWAB DENGAN JUJUR (Y/T)            \n");
+    printf("   Y = Ya / T = Tidak                  \n");
+    printf("========================================\n\n");
+   
+    printf("1. Apakah kamu merasa kesepian dalam sebulan terakhir? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("2. Apakah kamu merasa tertekan melihat teman-teman yang sudah berpacaran? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("3. Apakah kamu merasa hidupmu kurang bermakna tanpa pasangan? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("4. Apakah kamu sering merasa bosan dan mencari seseorang untuk mengisi waktu? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("5. Apakah kamu merasa siap secara finansial untuk menjalin hubungan? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("6. Apakah kamu memiliki tujuan pribadi yang ingin dicapai dulu sebelum pacaran? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("7. Apakah kamu merasa bisa bahagia sendirian tanpa pasangan? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("8. Apakah kamu merasa tekanan dari orang tua/keluarga untuk segera punya pacar? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("9. Apakah kamu memiliki cukup waktu untuk menjalin hubungan serius? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("10. Apakah kamu masih belum move on dari hubungan sebelumnya? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("11. Apakah kamu mengenal dirimu sendiri dengan baik? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("12. Apakah kamu mencari pacar karena takut sendirian di masa tua? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("13. Apakah kamu merasa percaya diri dengan kondisi dirimu saat ini? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("14. Apakah kamu siap menerima kekurangan orang lain? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("15. Apakah kamu benar-benar mencari pasangan untuk hal yang tepat (bukan karena FOMO)? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("\n\n========================================\n");
+    printf("            HASIL REFLEKSI             \n");
+    printf("========================================\n");
+    printf("Skor kamu: %d dari 15\n", skor);
+    printf("========================================\n\n");
+    
+    if (skor >= 10) {
+        printf("📋 HASIL ANALISIS: Kamu cenderung MERASA MEMBUTUHKAN pasangan.\n");
+        printf("   Tapi... mari kita lihat lebih dalam lagi.\n\n");
+   
+        if (kategori == 1) {
+            printf("🎓 KATEGORI: REMAJA SMA\n");
+            printf("------------------------------------------------\n");
+            printf("\"Wahai adik-adikku sayang...\n");
+            printf("Di usiamu yang masih sekolah ini, kamu sedang dalam masa\n");
+            printf("mencari jati diri. Perasaan ingin punya pacar itu wajar,\n");
+            printf("tapi ingat: pacar bukanlah kebutuhan utama di usia sekolah.\n");
+            printf("Belajar, menemukan passion, dan membangun masa depan\n");
+            printf("adalah prioritas yang lebih penting saat ini.\n");
+            printf("Cinta akan datang pada waktunya. Fokus dulu pada dirimu sendiri.\"\n");
+        } 
+        else if (kategori == 2) {
+            printf("📚 KATEGORI: MAHASISWA\n");
+            printf("------------------------------------------------\n");
+            printf("\"Halo mahasiswa keren! Masa kuliah adalah masa eksplorasi.\n");
+            printf("Memiliki pasangan boleh saja, tapi jangan sampai\n");
+            printf("mengganggu perkuliahan dan pengembangan dirimu.\n");
+            printf("Banyak mahasiswa yang terlalu fokus cinta sampai lupa\n");
+            printf("bahwa mereka sedang membangun fondasi karir masa depan.\n");
+            printf("Jika kamu ingin pacaran, pastikan hubunganmu sehat\n");
+            printf("dan saling mendukung pertumbuhan masing-masing.\"\n");
+        } 
+        else {
+            printf("💼 KATEGORI: PEKERJA (20-30an)\n");
+            printf("------------------------------------------------\n");
+            printf("\"Halo pekerja hebat! Di usiamu ini, wajar jika mulai\n");
+            printf("memikirkan hubungan serius. Tapi pastikan kamu mencari\n");
+            printf("pasangan karena alasan yang tepat, bukan karena tekanan\n");
+            printf("sosial atau takut kesepian. Hubungan yang sehat dibangun\n");
+            printf("oleh dua individu yang utuh, bukan karena saling melengkapi\n");
+            printf("kekosongan. Pastikan kamu sudah siap secara emosional,\n");
+            printf("finansial, dan mental sebelum melangkah ke hubungan serius.\"\n");
+        }
+        
+        printf("------------------------------------------------\n\n");
+        
+        printf("🔍 YUK REFLEKSIKAN DIRI DULU:\n");
+        printf("================================================\n\n");
+        
+        printf("1. ❤️ APAKAH KAMU MENCINTAI DIRI SENDIRI?\n");
+        printf("   - Kamu tidak bisa memberikan cinta yang tulus jika kamu sendiri tidak merasa berharga\n");
+        printf("   - Luangkan waktu untuk mengenali kelebihan dan kekuranganmu\n");
+        printf("   - Perlakukan dirimu seperti kamu memperlakukan orang yang kamu cintai\n\n");
+        
+        printf("2. 🎯 APA SEBENARNYA YANG KAMU CARI?\n");
+        printf("   - Apakah kamu mencari pasangan, atau hanya mencari pelarian dari kesepian?\n");
+        printf("   - Apakah kamu ingin pacar, atau hanya tekanan sosial?\n");
+        printf("   - Tuliskan 3 alasan mengapa kamu ingin pacar sekarang\n\n");
+        
+        printf("3. ⏰ APAKAH WAKTUMU SUDAH TEPAT?\n");
+        if (kategori == 1) {
+            printf("   - Fokus pada nilai dan masa depanmu dulu\n");
+            printf("   - Pacaran bisa menunggu, kesempatan sekolah tidak\n");
+        } else if (kategori == 2) {
+            printf("   - Prioritaskan kuliah dan pengembangan diri\n");
+            printf("   - Jangan sampai IPK turun karena terlalu sibuk pacaran\n");
+        } else {
+            printf("   - Pastikan karirmu sudah stabil\n");
+            printf("   - Punya waktu dan energi untuk membangun hubungan yang sehat\n");
+        }
+        printf("\n");
+        
+        printf("4. 🌟 JANGAN TERBURU-BURU\n");
+        printf("   - Lebih baik sendiri daripada salah pilih pasangan\n");
+        printf("   - Cinta yang baik datang pada waktu yang tepat\n");
+        printf("   - Gunakan masa sendirimu untuk menjadi versi terbaik dirimu\n\n");
+        
+        printf("5. 📞 BICARA DENGAN TEMAN ATAU KELUARGA\n");
+        printf("   - Minta pendapat orang terdekat yang kamu percaya\n");
+        printf("   - Mereka bisa memberikan perspektif yang mungkin belum kamu lihat\n\n");
+        
+        printf("================================================\n");
+        printf("💝 PESAN TERAKHIR: \"Lebih baik menunggu orang yang tepat\n");
+        printf("   daripada memaksakan dengan orang yang salah.\"\n");
+        printf("================================================\n");
+        
+    } 
+    else if (skor >= 5 && skor <= 9) {
+        printf("📋 HASIL ANALISIS: Kamu MASIH BINGUNG, perlu lebih banyak refleksi.\n\n");
+        
+        if (kategori == 1) {
+            printf("🎓 KATEGORI: REMAJA SMA\n");
+            printf("------------------------------------------------\n");
+            printf("\"Kamu masih di masa-masa indah pencarian jati diri.\n");
+            printf("Boleh saja penasaran dengan pacaran, tapi jangan jadikan\n");
+            printf("itu sebagai prioritas utama. Nikmati masa remajamu,\n");
+            printf("bangun persahabatan yang berkualitas, dan kenali dirimu\n");
+            printf("lebih dalam. Saat waktunya tepat, cinta akan datang\n");
+            printf("dengan sendirinya.\"\n");
+        } 
+        else if (kategori == 2) {
+            printf("📚 KATEGORI: MAHASISWA\n");
+            printf("------------------------------------------------\n");
+            printf("\"Kamu berada di posisi yang menarik: mungkin kadang merasa\n");
+            printf("butuh pasangan, kadang merasa nyaman sendiri.\n");
+            printf("Ini wajar! Gunakan masa kuliah untuk berkembang,\n");
+            printf("ikuti organisasi, bangun relasi, dan cari tahu\n");
+            printf("apa yang sebenarnya kamu inginkan dari sebuah hubungan.\n");
+            printf("Tidak apa-apa untuk belum punya pacar.\"\n");
+        } 
+        else {
+            printf("💼 KATEGORI: PEKERJA (20-30an)\n");
+            printf("------------------------------------------------\n");
+            printf("\"Kamu mungkin merasa ada yang kurang tapi belum yakin\n");
+            printf("apakah itu pasangan atau hal lain. Coba tanyakan pada dirimu:\n");
+            printf("Apakah kamu butuh pacar, atau butuh teman curhat?\n");
+            printf("Butuh pasangan, atau butuh validasi dari orang lain?\n");
+            printf("Luangkan waktu untuk menjawab pertanyaan-pertanyaan ini.\"\n");
+        }
+        
+        printf("------------------------------------------------\n\n");
+        
+        printf("🔍 HAL YANG BISA KAMU LAKUKAN:\n");
+        printf("================================================\n\n");
+        printf("1. 📝 Buat jurnal tentang apa yang kamu rasakan\n");
+        printf("2. 🤝 Perbanyak interaksi sosial tanpa tekanan pacaran\n");
+        printf("3. 🎯 Fokus pada tujuan hidupmu dulu\n");
+        printf("4. 💪 Kembangkan diri dan hobi baru\n");
+        printf("5. ⏳ Beri waktu pada dirimu untuk berpikir jernih\n\n");
+        
+        printf("💭 Ingat: Tidak ada yang salah dengan lajang.\n");
+        printf("Banyak orang justru menemukan jati dirinya saat sendiri.\n\n");
+        printf("================================================\n");
+        
+    } 
+    else {
+        printf("📋 HASIL ANALISIS: Kamu TIDAK MEMBUTUHKAN pacar saat ini.\n");
+        printf("   Dan itu benar-benar TIDAK MASALAH!\n\n");
+     
+        if (kategori == 1) {
+            printf("🎓 KATEGORI: REMAJA SMA\n");
+            printf("------------------------------------------------\n");
+            printf("\"Kamu luar biasa! Sadar bahwa di usiamu, fokus utama\n");
+            printf("adalah belajar dan mengembangkan diri. Ini adalah\n");
+            printf("keputusan yang sangat dewasa. Nikmati masa SMA-mu\n");
+            printf("dengan belajar, bermain, dan berteman. Pacaran bisa\n");
+            printf("nanti, masa muda hanya sekali.\"\n");
+        } 
+        else if (kategori == 2) {
+            printf("📚 KATEGORI: MAHASISWA\n");
+            printf("------------------------------------------------\n");
+            printf("\"Wah, kamu punya kesadaran diri yang bagus!\n");
+            printf("Memilih untuk fokus pada kuliah dan pengembangan diri\n");
+            printf("adalah keputusan yang bijak. Masa kuliah adalah waktu\n");
+            printf("yang tepat untuk mengeksplorasi potensi dirimu.\n");
+            printf("Hubungan yang baik akan datang saat kamu sudah menjadi\n");
+            printf("versi terbaik dari dirimu.\"\n");
+        } 
+        else {
+            printf("💼 KATEGORI: PEKERJA (20-30an)\n");
+            printf("------------------------------------------------\n");
+            printf("\"Kamu memiliki kematangan emosional yang luar biasa!\n");
+            printf("Menyadari bahwa kamu belum butuh pacar di usiamu\n");
+            printf("menunjukkan bahwa kamu tahu apa yang terbaik untuk dirimu.\n");
+            printf("Bangun karir, cintai diri sendiri, dan jalani hidup\n");
+            printf("dengan penuh makna. Pasangan yang tepat akan hadir\n");
+            printf("tanpa perlu dipaksakan.\"\n");
+        }
+        
+        printf("------------------------------------------------\n\n");
+        
+        printf("✨ HAL-HAL INDAH SAAT KAMU BAHAGIA TANPA PACAR:\n");
+        printf("================================================\n\n");
+        printf("1. 🚀 Kamu bisa fokus 100% pada pengembangan diri\n");
+        printf("2. 💰 Tabunganmu lebih aman (tidak ada budget kencan!)\n");
+        printf("3. 🎨 Waktumu bebas untuk mengejar passion dan hobi\n");
+        printf("4. 👥 Kamu bisa membangun koneksi pertemanan yang lebih luas\n");
+        printf("5. 🌱 Kamu belajar mandiri dan mengenal dirimu lebih baik\n");
+        printf("6. 🎯 Kamu bisa mencapai target karir/akademik tanpa distraksi\n\n");
+        
+        printf("💝 PESAN UNTUKMU:\n");
+        printf("\"Kamu sudah utuh apa adanya. Pasangan adalah pelengkap,\n");
+        printf("bukan penentu kebahagiaanmu. Teruslah menjadi versi\n");
+        printf("terbaik dari dirimu, dan pada waktunya,\n");
+        printf("orang yang tepat akan datang dengan sendirinya.\"\n\n");
+        
+        printf("================================================\n");
+    }
+    printf("\n========================================\n");
+    printf("   TERIMA KASIH TELAH MERENUNGKAN DIRI   \n");
+    printf("========================================\n");
+    printf("Ingat, kebahagiaan sejati datang dari dalam diri sendiri.\n");
+    printf("Pacar atau tidak, kamu tetap berharga dan berarti. 🌟\n");
+    
+    return 0;
+}
