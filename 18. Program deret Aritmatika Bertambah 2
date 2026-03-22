@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    int a;
+    int b = 2;
+    int c;
+    int i;
+    printf("Program deret aritmatika bertambah 2\n");
+    printf("Masukkan jumlah angka: ");
+    scanf("%d", &n);
+    printf("Deret aritmatika: %d angka:\n", n);
+
+    for (i = 1; i <= n; i++) {
+        printf("%d ", a);
+        c = a + b;
+        a = c;
+    }
+    return 0;
+}
