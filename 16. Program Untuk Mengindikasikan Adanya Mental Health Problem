@@ -1,0 +1,179 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char jawaban;
+    int skor = 0;
+    char pilihan;
+    int i;
+    printf("========================================\n");
+    printf("   PROGRAM SCREENING KESEHATAN MENTAL   \n");
+    printf("========================================\n\n");
+    
+    printf("Halo, terima kasih sudah peduli dengan kesehatan mentalmu.\n");
+    printf("Program ini akan membantu mengindikasikan apakah kamu\n");
+    printf("sedang mengalami kondisi mental yang perlu perhatian.\n\n");
+    printf("Apakah kamu yakin bahwa kamu butuh tes ini? (y/n): ");
+    scanf(" %c", &pilihan);
+    
+    if (pilihan == 'n' || pilihan == 'N') {
+        printf("\n========================================\n");
+        printf("   OKE, KUHARAP KAU BAIK-BAIK SAJA YA   \n");
+        printf("========================================\n");
+        printf("Ingat, selalu jaga kesehatan mentalmu.\n");
+        printf("Jika suatu saat kamu merasa butuh bantuan, jangan ragu.\n");
+        printf("Ada orang-orang yang peduli padamu. :)\n");
+        return 0;
+    }
+    printf("\n========================================\n");
+    printf("   JAWAB DENGAN JUJUR (Y/T)            \n");
+    printf("   Y = Ya / T = Tidak                  \n");
+    printf("========================================\n\n");
+
+    printf("1. Apakah kamu sering merasa sedih tanpa alasan yang jelas? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;    
+    printf("2. Apakah kamu sulit tidur atau justru tidur berlebihan? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    printf("3. Apakah kamu kehilangan minat pada hal-hal yang dulu kamu sukai? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("4. Apakah kamu merasa lelah atau kehilangan energi sepanjang waktu? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("5. Apakah kamu merasa tidak berharga atau bersalah berlebihan? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("6. Apakah kamu sulit berkonsentrasi atau mengambil keputusan? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("7. Apakah kamu merasa cemas atau khawatir berlebihan? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("8. Apakah kamu mudah marah atau tersinggung? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("9. Apakah kamu merasa sendirian meskipun sedang bersama orang lain? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("10. Apakah kamu mengalami perubahan nafsu makan yang signifikan? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("11. Apakah kamu merasa putus asa tentang masa depan? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("12. Apakah kamu menarik diri dari teman dan keluarga? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("13. Apakah kamu sering merasa tidak ada yang mengerti dirimu? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("14. Apakah kamu kesulitan menikmati hal-hal kecil dalam hidup? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("15. Apakah kamu pernah berpikir untuk melukai diri sendiri? (y/t): ");
+    scanf(" %c", &jawaban);
+    if (jawaban == 'y' || jawaban == 'Y') skor++;
+    
+    printf("\n\n========================================\n");
+    printf("             HASIL TES                \n");
+    printf("========================================\n");
+    printf("Skor kamu: %d dari 15\n", skor);
+    printf("========================================\n\n");
+    if (skor >= 8) {
+        printf("📋 INDIKASI: Kamu menunjukkan tanda-tanda yang perlu diperhatikan.\n");
+        printf("   Bisa jadi kamu sedang mengalami kondisi mental yang memerlukan\n");
+        printf("   perhatian lebih. Tapi ingat, ini hanya alat bantu awal.\n");
+        printf("   Diagnosis pasti harus dilakukan oleh tenaga profesional.\n\n");
+        printf("💝 KATA-KATA UNTUKMU:\n");
+        printf("------------------------------------------------\n");
+        printf("\"Perasaanmu saat ini valid dan tidak ada yang salah\n");
+        printf("dengan dirimu. Setiap orang punya masa-masa sulit,\n");
+        printf("dan yang terpenting adalah kamu masih di sini.\n");
+        printf("Kamu kuat, bahkan saat kamu merasa tidak.\n");
+        printf("Kamu berharga, bahkan saat kamu merasa sebaliknya.\n");
+        printf("Jangan ragu untuk meminta bantuan, itu adalah\n");
+        printf("tanda keberanian, bukan kelemahan.\"\n");
+        printf("------------------------------------------------\n\n");
+
+        printf("🔧 PERTOLONGAN PERTAMA YANG BISA DILAKUKAN:\n");
+        printf("================================================\n\n");
+        
+        printf("1. 🫂 BICARA DENGAN ORANG TERDEKAT\n");
+        printf("   - Ceritakan perasaanmu pada teman, keluarga, atau orang yang kamu percaya\n");
+        printf("   - Kamu tidak perlu sendirian menghadapi ini\n\n");
+        
+        printf("2. 🧘 AMBIL JEDA DAN BERISTIRAHAT\n");
+        printf("   - Beri dirimu waktu untuk berhenti sejenak dari rutinitas\n");
+        printf("   - Lakukan pernapasan dalam: tarik napas 4 detik, tahan 4 detik, hembus 6 detik\n\n");
+        
+        printf("3. 📝 TULISKAN PERASAANMU\n");
+        printf("   - Journaling bisa membantu melepaskan beban pikiran\n");
+        printf("   - Tulis apa pun yang kamu rasakan tanpa menghakimi\n\n");
+        
+        printf("4. 🚶 LAKUKAN AKTIVITAS RINGAN\n");
+        printf("   - Jalan kaki sebentar, mandi air hangat, atau dengarkan musik favorit\n");
+        printf("   - Aktivitas kecil bisa membantu mengalihkan pikiran\n\n");
+        
+        printf("5. 🍎 JAGA KESEHATAN DASAR\n");
+        printf("   - Pastikan makan teratur, minum air cukup, dan tidur yang memadai\n");
+        printf("   - Tubuh yang sehat membantu pikiran yang lebih stabil\n\n");
+        
+        printf("6. 📞 HUBUNGI PROFESIONAL\n");
+        printf("   - Jika kamu merasa perlu, jangan ragu untuk konsultasi dengan psikolog\n");
+        printf("   - Beberapa layanan konseling gratis tersedia online\n\n");
+        
+        printf("7. 🏥 HOTLINE KESEHATAN MENTAL (Jika di Indonesia)\n");
+        printf("   - Sahabat Jiwa: 119 ext 8\n");
+        printf("   - Yayasan Pulih: +62 812-9777-0177\n");
+        printf("   - Into the Light: +62 812-1230-0267\n\n");
+        
+        printf("================================================\n");
+        printf("INGAT: KAMU TIDAK SENDIRIAN. ADA ORANG YANG PEDULI.\n");
+        printf("================================================\n");
+        
+    } else {
+        printf("📋 INDIKASI: Kamu tidak menunjukkan tanda-tanda signifikan\n");
+        printf("   dari masalah kesehatan mental saat ini.\n\n");
+        
+        printf("💝 PESAN UNTUKMU:\n");
+        printf("------------------------------------------------\n");
+        printf("\"Kamu tidak mengalami indikasi masalah kesehatan mental\n");
+        printf("yang signifikan saat ini. Semoga kamu baik-baik saja!\n");
+        printf("Tetaplah jaga kesehatan mentalmu dengan baik.\n");
+        printf("Ingat, menjaga kesehatan mental sama pentingnya\n");
+        printf("dengan menjaga kesehatan fisik.\n");
+        printf("Lakukan hal-hal yang membuatmu bahagia dan\n");
+        printf("jangan ragu untuk beristirahat saat lelah.\"\n");
+        printf("------------------------------------------------\n\n");
+        
+        printf("📌 TIPS MENJAGA KESEHATAN MENTAL:\n");
+        printf("- Luangkan waktu untuk melakukan hobi yang kamu sukai\n");
+        printf("- Jaga koneksi dengan orang-orang terdekat\n");
+        printf("- Cukup tidur dan makan makanan bergizi\n");
+        printf("- Tetapkan batasan yang sehat (belajar bilang 'tidak')\n");
+        printf("- Jangan terlalu keras pada diri sendiri\n");
+        printf("- Jika suatu hari kamu merasa down, izinkan dirimu untuk istirahat\n\n");
+        
+        printf("SEMOGA KAMU SELALU BAIK-BAIK SAJA! 🌟\n");
+    }
+    
+    printf("\n========================================\n");
+    printf("   TERIMA KASIH TELAH MENJAGA DIRIMU   \n");
+    printf("========================================\n");
+    
+    return 0;
+}
