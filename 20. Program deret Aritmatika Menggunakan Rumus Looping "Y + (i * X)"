@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int X, Y;
+
+    printf("Masukkan nilai X (integer positif): ");
+    scanf("%d", &X);
+    if (X <= 0) {
+        printf("Error: X harus bilangan positif!\n");
+        return 0;
+    }
+    printf("Masukkan nilai Y (integer): ");
+    scanf("%d", &Y);
+
+    printf("Deret numerik:\n");
+    for (int i = 0; i < X; i++) {
+        printf("%d ", Y + (i * X));
+    }
+    printf("\n");
+    return 0;
+}
