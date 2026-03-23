@@ -1,0 +1,145 @@
+#include <stdio.h>
+float hitungasuransi(char jenis, float nilaitanggungan, float luas) {
+    float biayastandar = 0.035 * nilaitanggungan * luas;
+    float biayaakhir;
+    if (jenis == 'K' || jenis == 'k' || 
+        jenis == 'B' || jenis == 'b' || 
+        jenis == 'C' || jenis == 'c') {
+        biayaakhir = 2 * biayastandar;  
+    }
+    else if (jenis == 'P' || jenis == 'p' || 
+             jenis == 'S' || jenis == 's' || 
+             jenis == 'J' || jenis == 'j') {
+        biayaakhir = 1.5 * biayastandar;  
+    }
+    else {
+        biayaakhir = biayastandar;  
+    }
+    return biayaakhir;
+}
+void tampilpilihan() {
+    printf("\n--- PILIH JENIS LADANG BERDASARKAN HURUF AWAL ---\n");
+    printf("  K/k = Kedelai atau Kentang\n");
+    printf("  B/b = Bawang Merah\n");
+    printf("  C/c = Cabai\n");
+    printf("  P/p = Padi\n");
+    printf("  S/s = Singkong\n");
+    printf("  J/j = Jagung\n");
+    printf("  Huruf lain = Ladang lain (biaya standar)\n");
+    printf("--------------------------------------------------\n");
+}
+void cetakslip(
+    char n1, char n2, char n3, char n4, char n5,
+    char n6, char n7, char n8, char n9, char n10,
+    float total,
+    float b1, float b2, float b3,
+    char j1, char j2, char j3,
+    float nT1, float nT2, float nT3,
+    float l1, float l2, float l3,
+    int jumlah
+) {
+    printf("\n=====================================\n");
+    printf("     SLIP PEMBAYARAN ASURANSI\n");
+    printf("=====================================\n\n");
+
+    printf("Nama Petani : ");
+    printf("%c%c%c%c%c%c%c%c%c%c\n\n", n1, n2, n3, n4, n5, n6, n7, n8, n9, n10);
+    if (jumlah >= 1) {
+        printf("--- Jenis Ladang ke-1 ---\n");
+        printf("Jenis Ladang  : %c\n", j1);
+        printf("Nilai Tanggungan per Hektar : %.0f\n", nT1);
+        printf("Luas Ladang (hektar)        : %.1f\n", l1);
+        printf("Biaya Asuransi Ladang       : %.2f\n\n", b1);
+    }if (jumlah >= 2) {
+        printf("--- Jenis Ladang ke-2 ---\n");
+        printf("Jenis Ladang  : %c\n", j2);
+        printf("Nilai Tanggungan per Hektar : %.0f\n", nT2);
+        printf("Luas Ladang (hektar)        : %.1f\n", l2);
+        printf("Biaya Asuransi Ladang       : %.2f\n\n", b2);
+    }if (jumlah == 3) {
+        printf("--- Jenis Ladang ke-3 ---\n");
+        printf("Jenis Ladang  : %c\n", j3);
+        printf("Nilai Tanggungan per Hektar : %.0f\n", nT3);
+        printf("Luas Ladang (hektar)        : %.1f\n", l3);
+        printf("Biaya Asuransi Ladang       : %.2f\n\n", b3);
+    }
+    printf("-------------------------------------\n");
+    printf("TOTAL BIAYA ASURANSI : %.2f\n", total);
+    printf("=====================================\n");
+}
+int main() {
+    char n1, n2, n3, n4, n5, n6, n7, n8, n9, n10;
+    char c; 
+    int count = 0;
+    int jumlah;
+    char jenis1, jenis2, jenis3;
+    float nilai1, nilai2, nilai3;
+    float luas1, luas2, luas3;
+    float biaya1 = 0, biaya2 = 0, biaya3 = 0;
+    float total = 0;
+    printf("=== PROGRAM ASURANSI LADANG ===\n\n");
+    printf("Masukkan nama petani (maks 10 huruf, tanpa spasi): ");
+    n1 = n2 = n3 = n4 = n5 = n6 = n7 = n8 = n9 = n10 = ' ';
+    while ((c = getchar()) != '\n' && count < 10) {
+        count++;
+        if (count == 1) n1 = c;
+        else if (count == 2) n2 = c;
+        else if (count == 3) n3 = c;
+        else if (count == 4) n4 = c;
+        else if (count == 5) n5 = c;
+        else if (count == 6) n6 = c;
+        else if (count == 7) n7 = c;
+        else if (count == 8) n8 = c;
+        else if (count == 9) n9 = c;
+        else if (count == 10) n10 = c;
+    }
+    printf("Masukkan jumlah jenis ladang (maks 3): ");
+    scanf("%d", &jumlah);
+
+    if (jumlah >= 1) {
+        printf("\nLadang ke-1:\n");
+        tampilpilihan();
+        printf("Masukkan huruf awal jenis ladang: ");
+        scanf(" %c", &jenis1);
+        printf("Nilai tanggungan per hektar: ");
+        scanf("%f", &nilai1);
+        printf("Luas ladang (hektar): ");
+        scanf("%f", &luas1);
+        biaya1 = hitungasuransi(jenis1, nilai1, luas1);
+        total += biaya1;
+    }
+    if (jumlah >= 2) {
+        printf("\nLadang ke-2:\n");
+        tampilpilihan();
+        printf("Masukkan huruf awal jenis ladang: ");
+        scanf(" %c", &jenis2);
+        printf("Nilai tanggungan per hektar: ");
+        scanf("%f", &nilai2);
+        printf("Luas ladang (hektar): ");
+        scanf("%f", &luas2);
+        biaya2 = hitungasuransi(jenis2, nilai2, luas2);
+        total += biaya2;
+    }
+    if (jumlah == 3) {
+        printf("\nLadang ke-3:\n");
+        tampilpilihan();
+        printf("Masukkan huruf awal jenis ladang: ");
+        scanf(" %c", &jenis3);
+        printf("Nilai tanggungan per hektar: ");
+        scanf("%f", &nilai3);
+        printf("Luas ladang (hektar): ");
+        scanf("%f", &luas3);
+        biaya3 = hitungasuransi(jenis3, nilai3, luas3);
+        total += biaya3;
+    }
+    cetakslip(
+        n1, n2, n3, n4, n5, n6, n7, n8, n9, n10,
+        total,
+        biaya1, biaya2, biaya3,
+        jenis1, jenis2, jenis3,
+        nilai1, nilai2, nilai3,
+        luas1, luas2, luas3,
+        jumlah
+    );
+    return 0;
+}
