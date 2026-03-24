@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main() {
+    double modal_awal, harga_beli, harga_jual;
+    double jumlah_aset, nilai_akhir, selisih, persentase;
+
+    printf("KALKULATOR PROFIT KRIPTO / SAHAM \n");
+ 
+    printf("Masukkan Modal Awal (Rp) : ");
+    scanf("%lf", &modal_awal);
+    
+    printf("Masukkan Harga Beli (Rp) : ");
+    scanf("%lf", &harga_beli);
+    
+    printf("Masukkan Harga Jual (Rp) : ");
+    scanf("%lf", &harga_jual);
+    printf("--------------------------------------\n");
+
+  
+    jumlah_aset = modal_awal / harga_beli; 
+    nilai_akhir = jumlah_aset * harga_jual; 
+    selisih = nilai_akhir - modal_awal; 
+   
+    persentase = (selisih / modal_awal) * 100; 
+
+    printf("Total aset yang bisa didapatkan  : %.4lf keping/lembar\n", jumlah_aset);
+    printf("Estimasi nilai akhir     : Rp %.2lf\n", nilai_akhir);
+
+    printf("\n>>> STATUS: ");
+    if (selisih > 0) {
+        printf("MENYALA ABANGKU! \n");
+        printf("Keuntungan: Rp %.2lf (+%.2lf%%)\n", selisih, persentase);
+    } else if (selisih < 0) {
+        printf("WALAH WEH RUGI! \n");
+        printf("Kerugian: Rp %.2lf (%.2lf%%)\n", selisih * -1, persentase);
+    } else {
+        printf("Yah malah balik modal \n");
+        printf("Tidak untung, tidak rugi.\n");
+    }
+    return 0;
+}
