@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    double jarak, rasio_bensin, harga_bensin;
+    double liter_dibutuhkan, total_biaya;
+
+    printf("  ESTIMASI BIAYA BENSIN BUAT ROADTRIP  \n");    
+    printf("Masukkan Jarak Tempuh (Km)          : ");
+    scanf("%lf", &jarak);
+    
+    printf("Konsumsi BBM Mobil (Km per Liter)   : ");
+    scanf("%lf", &rasio_bensin);
+    
+    printf("Harga Bensin Saat Ini (Pertalite 10 ribu, Pertamax 12 ribu Rp per Liter): ");
+    scanf("%lf", &harga_bensin);
+
+
+    liter_dibutuhkan = jarak / rasio_bensin;
+    
+    total_biaya = liter_dibutuhkan * harga_bensin;
+
+    printf(">> Bensin yang dibutuhkan : %.2lf Liter\n", liter_dibutuhkan);
+    printf(">> Total Estimasi Biaya   : Rp %.2lf\n", total_biaya);
+
+    printf("Oke Gas, Oke Gas\n");
+
+    return 0;
+}
