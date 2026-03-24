@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+struct Tugas {
+    char nama_tugas[50];
+    int selesai;
+};
+int main() {
+    struct Tugas list_tugas[5] = {
+        {"Bantu koordinator Furency", 0},
+        {"Rapat evaluasi panitia Imlek", 0},
+        {"Follow up vendor Classmeeting", 1}, 
+        {"Buat rundown acara", 0},
+        {"Kumpul RAB divisi", 0}
+    };
+    int jumlah_tugas = 5;
+    int pilihan;
+
+    while (1) {
+        printf("     TRACKER KEPANITIAAN     \n");
+        
+        for (int i = 0; i < jumlah_tugas; i++) {
+            if (list_tugas[i].selesai == 1) {
+                printf("%d. [X] %s\n", i + 1, list_tugas[i].nama_tugas);
+            } else {
+                printf("%d. [ ] %s\n", i + 1, list_tugas[i].nama_tugas);
+            }
+        }
+
+        printf("\nMenu:\n");
+        printf("1. Tandai tugas selesai\n");
+        printf("2. Keluar program\n");
+        printf("Pilih menu (1/2): ");
+        scanf("%d", &pilihan);
+        if (pilihan == 1) {
+            int nomor;
+            printf("Nomor tugas yang sudah beres: ");
+            scanf("%d", &nomor);
+            
+            if (nomor >= 1 && nomor <= jumlah_tugas) {
+                list_tugas[nomor - 1].selesai = 1;
+                printf("\n=> Mantap! Tugas '%s' diselesaikan.\n", list_tugas[nomor - 1].nama_tugas);
+            } else {
+                printf("\n=> Nomor nggak valid!\n");
+            }
+        } else if (pilihan == 2) {
+            printf("\Tetap semangat dan pantang menyerah!\n");
+            break;
+        } else {
+            printf("\n=> Pilihan tidak ada di menu.\n");
+        }
+    }
+
+    return 0;
+}
