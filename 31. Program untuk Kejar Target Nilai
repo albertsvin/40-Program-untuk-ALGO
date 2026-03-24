@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    double nilai_tugas, nilai_uts, target_akhir;
+    double bobot_tugas, bobot_uts, bobot_uas;
+    double skor_sementara, butuh_uas;
+    printf(" KALKULATOR TARGET NILAI UAS  \n");
+    printf("Masukkan Nilai Tugas saat ini : ");
+    scanf("%lf", &nilai_tugas);
+    printf("Masukkan persen Bobot Tugas (misal: 30) : ");
+    scanf("%lf", &bobot_tugas);
+
+    printf("\nMasukkan Nilai UTS saat ini   : ");
+    scanf("%lf", &nilai_uts);
+    printf("Masukkan persen Bobot UTS (misal: 30)   : ");
+    scanf("%lf", &bobot_uts);
+
+    printf("\nMasukkan Target Nilai Akhir (misal 85 utk A): ");
+    scanf("%lf", &target_akhir);
+    bobot_uas = 100.0 - bobot_tugas - bobot_uts;
+    skor_sementara = (nilai_tugas * (bobot_tugas / 100.0)) + (nilai_uts * (bobot_uts / 100.0));
+    butuh_uas = (target_akhir - skor_sementara) / (bobot_uas / 100.0);
+
+    printf("Sisa Bobot UAS kamu adalah %.0lf%%\n", bobot_uas);
+    printf("Poin yang sudah terkumpul: %.2lf\n\n", skor_sementara);
+
+    if (butuh_uas > 100) {
+        printf(" WADUH! Kamu butuh nilai UAS %.2lf.\n", butuh_uas);
+        printf("Targetnya ketinggian, realistis aja turunin target grade-nya jadi B atau B+.\n");
+    } else if (butuh_uas <= 0) {
+        printf(" SANTAI! Kamu cuma butuh nilai UAS 0.\n");
+        printf("Tabungan nilai Tugas dan UTS kamu udah cukup buat nyapai target!\n");
+    } else {
+        printf("GASKAN! Kamu butuh nilai UAS minimal: %.2lf\n", butuh_uas);
+        printf("Masih sangat bisa dikejar, semangat belajarnya!\n");
+    }
+    return 0;
+}
