@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    char *ide_kencan[] = {
+        "Hunting foto bareng keliling Blok M",
+        "Main badminton berdua (yang kalah traktir)",
+        "Cafe hopping nyari tempat estetik",
+        "Movie marathon sambil pesen makanan",
+        "Night ride nyari angin malam",
+        "Masak bareng pakai resep random"
+    };
+    int jumlah_ide = sizeof(ide_kencan) / sizeof(ide_kencan[0]);
+    srand(time(NULL));
+    int pilihan = rand() % jumlah_ide;
+
+printf("       DATE ROULETTE      \n");
+    printf("Tekan [ENTER] untuk memutar dan menentukan yang dilakukan...\n");
+   
+    getchar(); 
+
+    printf(" HASILNYA: \n");
+    printf(" %s \n\n", ide_kencan[pilihan]);
+
+    return 0;
+}
