@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main() {
+    char operator;
+    double angka1, angka2, hasil;
+    printf("=================================\n");
+    printf("        KALKULATOR SIMPLE        \n");
+    printf("=================================\n");
+    printf("Pilih operator (+, -, *, /): ");
+    scanf(" %c", &operator);
+
+    printf("Masukkan angka pertama: ");
+    scanf("%lf", &angka1);
+    printf("Masukkan angka kedua: ");
+    scanf("%lf", &angka2);
+
+    switch (operator) {
+        case '+':
+            hasil = angka1 + angka2;
+            printf("Hasil: %.2lf + %.2lf = %.2lf\n", angka1, angka2, hasil);
+            break;
+        case '-':
+            hasil = angka1 - angka2;
+            printf("Hasil: %.2lf - %.2lf = %.2lf\n", angka1, angka2, hasil);
+            break;
+        case '*':
+            hasil = angka1 * angka2;
+            printf("Hasil: %.2lf * %.2lf = %.2lf\n", angka1, angka2, hasil);
+            break;
+        case '/':
+            if (angka2 != 0) {
+                hasil = angka1 / angka2;
+                printf("Hasil: %.2lf / %.2lf = %.2lf\n", angka1, angka2, hasil);
+            } else {
+                printf("Error: Angka tidak bisa dibagi dengan Nol (0)!\n");
+            }
+            break;
+            
+        default:
+            printf("Error: Operator ini tidak ada, pakai yang benar!\n");
+    }
+    return 0;
+}
