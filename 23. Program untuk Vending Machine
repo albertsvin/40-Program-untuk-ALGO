@@ -1,0 +1,60 @@
+#include <stdio.h>
+
+int main() {
+    int pilihan, jumlahProduk = 0, totalHarga = 0;
+    int p1 = 15000, p2 = 18000, p3 = 20000, p4 = 22000, p5 = 25000;
+
+    printf("=== VENDING MACHINE ===\n");
+    while (1) {
+        printf("\nDaftar Produk:\n");
+        printf("1. Produk A - Rp%d\n", p1);
+        printf("2. Produk B - Rp%d\n", p2);
+        printf("3. Produk C - Rp%d\n", p3);
+        printf("4. Produk D - Rp%d\n", p4);
+        printf("5. Produk E - Rp%d\n", p5);
+        printf("6. Selesai Pilih\n");
+        printf("----------------------\n");
+        printf("Pilih produk (1-6): ");
+        scanf("%d", &pilihan);
+
+        if (pilihan == 6) {
+            break;         }
+
+        if (pilihan == 1) {
+            totalHarga += p1;
+            jumlahProduk++;
+            printf("Anda memilih Produk A\n");
+        } else if (pilihan == 2) {
+            totalHarga += p2;
+            jumlahProduk++;
+            printf("Anda memilih Produk B\n");
+        } else if (pilihan == 3) {
+            totalHarga += p3;
+            jumlahProduk++;
+            printf("Anda memilih Produk C\n");
+        } else if (pilihan == 4) {
+            totalHarga += p4;
+            jumlahProduk++;
+            printf("Anda memilih Produk D\n");
+        } else if (pilihan == 5) {
+            totalHarga += p5;
+            jumlahProduk++;
+            printf("Anda memilih Produk E\n");
+        } else {
+            printf("Pilihan tidak valid!\n");
+            continue;
+        }
+        if (jumlahProduk >= 3 || totalHarga >= 50000) {
+            break;
+        }
+    }
+    printf("\n=== RINGKASAN PEMBELIAN ===\n");
+    printf("Jumlah produk dipilih: %d\n", jumlahProduk);
+    printf("Total harga: Rp%d\n", totalHarga);
+    printf("Terima kasih telah berbelanja!\n");
+
+    return 0;
+}
+
+
+
