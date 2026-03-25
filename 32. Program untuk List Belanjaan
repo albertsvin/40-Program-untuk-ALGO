@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include <string.h>
+struct Belanjaan {
+    char nama[50];
+    int sudah_dibeli; 
+};
+int main() {
+    struct Belanjaan daftar[100]; 
+    int total = 0;
+    int pilihan;
+    while (1) {
+        printf(" CATATAN BELANJA SUPERMARKET \n");
+        printf("1. Tambah Barang Baru\n");
+        printf("2. Lihat Daftar Belanja\n");
+        printf("3. Centang Barang (Sudah Dibeli)\n");
+        printf("4. Selesai & Keluar\n");
+        printf("Pilih menu (1-4): ");
+        scanf("%d", &pilihan);
+
+        if (pilihan == 1) {
+            printf("\nMasukkan nama barang: ");
+            scanf(" %[^\n]", daftar[total].nama); 
+            
+            daftar[total].sudah_dibeli = 0; 
+            total++; 
+            
+            printf("Barang berhasil ditambahkan!\n");
+        } 
+        else if (pilihan == 2) {
+            printf("\n--- DAFTAR BELANJAAN ---\n");
+            if (total == 0) {
+                printf("Daftar masih kosong, yuk tambah barang dulu!\n");
+            } else {
+                for (int i = 0; i < total; i++) {
+                    if (daftar[i].sudah_dibeli == 1) {
+                        printf("%d. [X] %s\n", i + 1, daftar[i].nama);
+                    } else {
+                        printf("%d. [ ] %s\n", i + 1, daftar[i].nama);
+                    }
+                }
+            }
+        } 
+        else if (pilihan == 3) {
+            int nomer;
+            printf("\n--- CENTANG BARANG ---\n");
+            if (total == 0) {
+                printf("Belum ada barang di daftar!\n");
+            } else {
+                for (int i = 0; i < total; i++) {
+                    if (daftar[i].sudah_dibeli == 0) {
+                        printf("%d. %s\n", i + 1, daftar[i].nama);
+                    }
+                }
+                
+                printf("\nMasukkan nomor barang yang sudah masuk keranjang: ");
+                scanf("%d", &nomer);
+    
+                if (nomer >= 1 && nomer <= total) {
+                    daftar[nomer - 1].sudah_dibeli = 1; 
+                    printf(" Nah '%s' ditandai sudah dibeli.\n", daftar[nomer - 1].nama);
+                } else {
+                    printf(" Nomer barang tidak ditemukan!\n");
+                }
+            }
+        } 
+        else if (pilihan == 4) {
+            printf("\n Gw gampar kalau ada yang lupa\n");
+            break; 
+        } 
+        else {
+            printf(" Pilihan tidak ada di menu!\n");
+        }
+    }
+
+    return 0;
+}
