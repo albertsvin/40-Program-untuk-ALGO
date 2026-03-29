@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int hasil_akhir, rahasia, umur, angka_favorit;
+
+    printf("=== PROGRAM TEBAK UMUR SUPER MAGIS ===\n");
+    printf("Saya tidak akan meminta tahun lahir atau umurmu!\n\n");
+    
+    printf("Siapkan kalkulator, dan ikuti instruksi ini:\n");
+    printf("1. Pikirkan satu angka dari 1 sampai 9 (jangan sebutkan!).\n");
+    printf("2. Kalikan angka tersebut dengan 2.\n");
+    printf("3. Tambahkan 5 ke hasilnya.\n");
+    printf("4. Kalikan hasilnya dengan 50.\n");
+    printf("5. Tambahkan UMUR kamu saat ini ke hasil tersebut.\n");
+    printf("6. Terakhir, kurangi totalnya dengan 365 (jumlah hari dalam setahun).\n\n");
+
+    printf("Sudah? Sekarang masukkan hasil akhir dari kalkulatormu di sini: ");
+    scanf("%d", &hasil_akhir);
+
+    printf("\n[ Membaca pikiran... ]\n");
+    umur = rahasia % 100;
+
+    angka_favorit = rahasia / 100;
+
+    printf("\n====================================\n");
+    printf("Tadaa!\n");
+    printf("Angka rahasia yang kamu pikirkan adalah : %d\n", angka_favorit);
+    printf("Dan umur kamu sekarang adalah           : %d tahun!\n", umur);
+    printf("====================================\n");
+
+    return 0;
+}
