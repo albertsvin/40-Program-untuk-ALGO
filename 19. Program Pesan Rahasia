@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    char pesan[100];
+    int kunci_geser = 3;
+    printf("=== MESIN ENKRIPSI PESAN ===\n");
+    printf("Masukkan pesan rahasia (tanpa spasi): ");
+    scanf("%s", pesan);
+
+    printf("\nPesan Asli   : %s\n", pesan);
+    for(int i = 0; pesan[i] != '\0'; ++i) {
+        char karakter = pesan[i];
+            if(karakter >= 'a' && karakter <= 'z') {
+            karakter = karakter + kunci_geser;
+            
+            if(karakter > 'z') {
+                karakter = karakter - 'z' + 'a' - 1;
+            }
+            pesan[i] = karakter;
+        }
+        else if(karakter >= 'A' && karakter <= 'Z') {
+            karakter = karakter + kunci_geser;
+            
+            if(karakter > 'Z') {
+                karakter = karakter - 'Z' + 'A' - 1;
+            }
+            pesan[i] = karakter;
+        }
+    }
+    printf("Pesan Sandi  : %s\n", pesan);
+    return 0;
+}
