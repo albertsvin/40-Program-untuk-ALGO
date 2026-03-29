@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char huruf;
+    int isVokal;
+    printf("Masukkan sebuah huruf: ");
+    scanf(" %c", &huruf);
+
+    char lower = tolower(huruf);
+    isVokal = (lower == 'a' || lower == 'e' || lower == 'i' || lower == 'o' || lower == 'u');
+    if (!isalph(huruf)) {
+        printf("Karakter yang dimasukkan bukan huruf alfabet.\n");
+    } else if (isVokal) {
+        printf("'%c' adalah huruf Vokal.\n", huruf);
+    } else {
+        printf("'%c' adalah huruf Konsonan.\n", huruf);
+    }
+
+    return 0;
+}
