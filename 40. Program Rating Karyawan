@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Karyawan {
+    int id;
+    char nama[50];
+    float nilai_kinerja;
+    float nilai_sikap;
+    float rata_rata;
+};
+
+int main() {
+    int jumlah;
+    printf("=== SISTEM RATING & EVALUASI KARYAWAN ===\n");
+    printf("Masukkan jumlah karyawan yang akan dinilai: ");
+    scanf("%d", &jumlah);
+
+    struct Karyawan data[jumlah]; 
+    for(int i = 0; i < jumlah; i++) {
+        printf("\n--- Data Karyawan ke-%d ---\n", i + 1);
+        printf("ID Karyawan: ");
+        scanf("%d", &data[i].id);
+        
+        printf("Nama Karyawan: ");
+        scanf(" %[^\n]", data[i].nama); 
+        
+        printf("Nilai Kinerja (0-100): ");
+        scanf("%f", &data[i].nilai_kinerja);
+        
+        printf("Nilai Sikap (0-100): ");
+        scanf("%f", &data[i].nilai_sikap);
+
+        data[i].rata_rata = (data[i].nilai_kinerja + data[i].nilai_sikap) / 2.0;
+    }
+    printf("\n=================================================================\n");
+    printf("                      HASIL EVALUASI HRD                         \n");
+    printf("=================================================================\n");
+    printf("ID\t| Nama\t\t| Kinerja | Sikap | Rata-rata | Predikat\n");
+    printf("-----------------------------------------------------------------\n");
+    for(int i = 0; i < jumlah; i++) {
+        printf("%d\t| %-15s| %.1f\t  | %.1f   | %.2f\t  | ", 
+                data[i].id, data[i].nama, data[i].nilai_kinerja, data[i].nilai_sikap, data[i].rata_rata);
+        
+        if (data[i].rata_rata >= 85.0) {
+            printf("Sangat Baik\n");
+        } else if (data[i].rata_rata >= 70.0) {
+            printf("Baik\n");
+        } else if (data[i].rata_rata >= 50.0) {
+            printf("Cukup\n");
+        } else {
+            printf("Perlu Peningkatan\n");
+        }
+    }
+    printf("=================================================================\n");
+
+    return 0;
+}
