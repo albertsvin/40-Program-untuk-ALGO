@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    float rupiah, usd, php, cny, myr; 
+    
+    float kurs_usd = 16990.80;
+    float kurs_php = 280.38;
+    float kurs_cny = 2458.21;
+    float kurs_myr = 4329.97;
+
+    printf("Masukkan nominal dalam Rupiah (IDR): ");
+    scanf("%f", &rupiah);
+    usd = rupiah / kurs_usd;
+    php = rupiah / kurs_php;
+    cny = rupiah / kurs_cny;
+    myr = rupiah / kurs_myr;
+    printf("\n--- Hasil Konversi ---\n");
+    printf("Rp %.2f setara dengan:\n", rupiah);
+    printf("- $%.2f USD (Dolar AS)\n", usd);
+    printf("- %.2f PHP (Peso Filipina)\n", php);
+    printf("- %.2f CNY (Yuan Tiongkok)\n", cny);
+    printf("- RM%.2f MYR (Ringgit Malaysia)\n", myr);
+
+    return 0;
+}
